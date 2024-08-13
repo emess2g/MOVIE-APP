@@ -1,8 +1,16 @@
 import React from 'react'
 
+
 const Movies = () => {
+     console.log(fetchMovies)
+  imp
+
   return (
-    <div>Movies</div>
+    <div>Movies
+      {fetchMovies.map((val) => {
+
+      })}
+    </div>
   )
 }
 

@@ -4,7 +4,7 @@ import Pagination from '../components/Pagination';
 import { FaFire } from 'react-icons/fa';
 import dayjs from 'dayjs'
 
-const Trending = () => {
+const Home = () => {
   const [state, SetState] = useState([]);
   const [page, setPage] = useState(1)
 
@@ -27,15 +27,15 @@ const Trending = () => {
 
   return (
     <>
-    <div className="flex flex-col justify-center">
-            <div className="flex flex-col justify-center border-black">
-              <div className="flex text-center" >
+    <div className="mt-[8rem]  mx-8 flex flex-col justify-center">
+            <div className="flex flex-col justify-center items-start border-black">
+              <div className="flex p-2 mb-4 items-center gap-2 text-cente  " >
                 <FaFire />
               <h2>Trending Today</h2>
                 <FaFire />
               </div>
             </div>
-            <div className="grid grid-cols-4 justify-center">
+            <div className="grid grid-cols-8 gap-4  justify-between">
             {state.map((val) => {
               const {
                 name,
@@ -46,26 +46,27 @@ const Trending = () => {
                 media_type,
                 id,
               } = val;
+              console.log(state);
               return (
-                <div key={id} className="flex flex-col items-center  bg-[red] m-2 p-2 rounded-md text-white">
-
-                    <img className='w-[80%]' src={  poster_path ? `${img_300}/${poster_path}` : unavailable } alt={title} />
-
-                      <h5 className='text-center '>{title || name}</h5>
-                      <div className=" flex  gap-2 text-center">
-                        <div>{media_type === "tv" ? "TV" : "Movie"}</div>
-                        <div>{dayjs(first_air_date).format("MMM D, YYYY") || dayjs(release_date).format("MMM D, YYY")}</div>
+                <div key={id} className="relative fle flex-co  justify-between p-2  text items-cent     runded-md text-white">
+                     <div className="w-[%]">
+                     <img className='rounded-md' src={  poster_path ? `${img_300}/${poster_path}` : unavailable } alt={title} />
+                     <div className="absolute  bottom-0 flex flex-col  gap- text-center p-4 ">
+                      <h5 className='text-center text-[14px] bg-white-700 '>{title || name}</h5>
+                        {/* <p>{media_type === "tv" ? "TV" : "Movie"}</p> */}
+                        {/* <div>{dayjs(first_air_date).format("MMM D, YYYY") || dayjs(release_date).format("MMM D, YYY")}</div> */}
                       </div>
-                 
-                        
+                     </div>
+               
+                                           
                 </div>
               )
             })}
-            <Pagination page={page}  setPage={setPage}/>
+            {/* <Pagination page={page}  setPage={setPage}/> */}
            </div>
            </div>
     </>
   )
 }
 
-export default Trending
+export default Home

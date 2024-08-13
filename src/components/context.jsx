@@ -5,6 +5,7 @@ const AppContext = createContext();
  const Context = ({children, media_type, id}) => {
     const [data, setData] = useState([]);
     const [video, setVideo] = useState([]);
+    const [movies, setMovies] = useState([]);
 
     // const baseImgUrl = 'https://api.themoviedb.org/3';
 
@@ -20,16 +21,25 @@ const AppContext = createContext();
         setData(responseData.adult);
     }
 
-    const fetchVideo = async () => {
-        const ytVideo = await fetch(`${apiUrl}/${media_type}/${id}/videos?api_key=${apiKey}`);
-        const YTvideo = await ytVideo.json();
-        console.log(YTvideo);
-        setVideo(YTvideo.results[0]);
+    const fetchMovies = async () => {
+      const movieResponse = await fetch(`${apiUrl}/movie/popular?api_key=${apiKey}`);
+
+      const movieData = await movieResponse.json();
+      console.log(movieData);
+      setMovies(movieData)
     }
+
+    // const fetchVideo = async () => {
+    //     const ytVideo = await fetch(`${apiUrl}/${media_type}/${id}/videos?api_key=${apiKey}`);
+    //     const YTvideo = await ytVideo.json();
+    //     console.log(YTvideo);
+    //     setVideo(YTvideo.results[0]);
+    // }
 
     useEffect(() => {
         fetchData();
-        fetchVideo();
+        fetchMovies();
+        // fetchVideo();
     }, [])
     
     console.log(video);

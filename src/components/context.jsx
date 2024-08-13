@@ -9,10 +9,6 @@ const AppContext = createContext();
 
     // const baseImgUrl = 'https://api.themoviedb.org/3';
 
-    const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
-
-    const apiKey = import.meta.env.VITE_REACT_APP_API_KEY;
-
     const fetchData = async () => {
         const response = await fetch(` ${apiUrl}/trending/all/day?api_key=${apiKey}`);
   

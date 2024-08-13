@@ -1,2 +1,1 @@
-VITE_REACT_APP_API_URL = https://api.themoviedb.org/3
 VITE_REACT_APP_API_KEY = d1e5f1fb1b58344109424490758ee6f5

@@ -1,14 +1,3 @@
-// api keys
-export const API_URL = import.meta.env.VITE_REACT_APP_API_URL;
-export const API_KEY = import.meta.env.VITE_REACT_APP_API_KEY;
-
-export const POPULAR_MOVIES_API_URL = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US`;
-export const DISCOVER_API_URL = `${API_URL}discover/movie?api_key=${API_KEY}&language=en-US`;
-export const POPULAR_TVS_API_URL = `${API_URL}tv/popular?api_key=${API_KEY}&language=en-US`;
-export const TRENDING_API_URL = `${API_URL}trending/all/day?api_key=${API_KEY}&language=en-US`;
-
-export const SEARCH_API_URL = `${API_URL}search/multi?api_key=${API_KEY}&language=en-US&page=1`;
-
 
 //image sizes for tmdb
 export const img_300 = "https://image.tmdb.org/t/p/w300";

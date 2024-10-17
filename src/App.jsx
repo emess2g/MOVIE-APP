@@ -9,14 +9,14 @@ import SingleMovie from "./Pages/SingleMovie.jsx";
 import Error from "./Pages/Error.jsx";
 const App = () => {
   return (
-    <div className="bg-[#fff]">
+    <div className="">
       <BrowserRouter >
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} exact />
      // Home page is denoted with ‘/’ symbol
-          <Route path="/movies" element={<Movies /> } />// movies page
-          <Route path="/tv" element={<TV />} /> // TV Series Page
+          {/* <Route path="/movies" element={<Movies /> } />// movies page */}
+          {/* <Route path="/tv" element={<TV />} /> // TV Series Page */}
           {/* <Route path="/search" element={<Search />} />  */}
      // Custom Search Page
           <Route path="/error" element={<Error />} /> // Error Page
